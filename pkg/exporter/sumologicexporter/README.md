@@ -21,7 +21,7 @@ exporters:
     # max HTTP request body size in bytes before compression (if applied),
     # NOTE: this limit does not apply to data sent in otlp format,
     #   to limit size of otlp requests, please use the batch processor:
-    #   https://github.com/open-telemetry/opentelemetry-collector/tree/v0.78.2/processor/batchprocessor
+    #   https://github.com/open-telemetry/opentelemetry-collector/tree/v0.79.0/processor/batchprocessor
     # default = 1_048_576 (1MB)
     max_request_body_size: <max_request_body_size>
 
@@ -109,7 +109,7 @@ exporters:
       # default = None
       storage: <storage_name>
       # maximum number of batches kept in memory before data;
-      # ignored if enabled is false, default = 5000
+      # ignored if enabled is false, default = 1000
       #
       # user should calculate this as num_seconds * requests_per_second where:
       # num_seconds is the number of seconds to buffer in case of a backend outage,

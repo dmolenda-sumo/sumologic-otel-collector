@@ -1,5 +1,5 @@
 BINARY_NAME ?= otelcol-sumo
-BUILDER_VERSION ?= 0.78.2
+BUILDER_VERSION ?= 0.79.0
 FIPS_SUFFIX ?= ""
 BUILDER_REPO ?= github.com/open-telemetry/opentelemetry-collector
 GO ?= go
@@ -138,7 +138,7 @@ generate-sources:
 test:
 	@$(MAKE) ensure-correct-builder-version || $(MAKE) install-builder
 	@$(MAKE) generate-sources
-	@$(MAKE) -C cmd test CGO_ENABLED=${CGO_ENABLED}
+	CGO_ENABLED=${CGO_ENABLED} GOEXPERIMENT=$(GOEXPERIMENT) $(MAKE) -C cmd test
 
 .PHONY: lint
 lint: install-builder generate-sources

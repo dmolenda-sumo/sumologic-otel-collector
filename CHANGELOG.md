@@ -5,20 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-<!--
 ## [Unreleased]
 
+### Changed
+
+- chore: update OT core to v0.79.0 [#1158]
+
+[#1158]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1154
 [unreleased]: https://github.com/SumoLogic/sumologic-otel-collector/compare/v0.78.0-sumo-0...main
--->
 
 ## [v0.78.0-sumo-0]
 
-### Released 2023-05-31
+### Released 2023-06-05
+
+This release introduces the following breaking changes:
+
+- fix(sumologicextension)!: check credentials dir at start [#1152] [#1153]
+
+Set `force_registatrion: true` in the extension configuration if you don't want the credentials persisted at all.
 
 ### Added
 
 - feat(receiver/filestats): add File Stats receiver [#1146]
 - feat(receiver/sqlquery): add experimental logs support [#1144]
+- feat(exporter/awss3): add AWS S3 exporter [#1149]
 
 ### Changed
 
@@ -33,6 +43,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#1144]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1144
 [#1145]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1145
 [#1146]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1146
+[#1149]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1149
+[#1152]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1152
+[#1153]: https://github.com/SumoLogic/sumologic-otel-collector/pull/1153
 
 ## [v0.77.0-sumo-0]
 
