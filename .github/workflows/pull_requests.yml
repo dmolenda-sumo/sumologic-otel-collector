@@ -408,6 +408,16 @@ jobs:
           path: ./otelcolbuilder/cmd/otelcol-sumo-${{matrix.arch_os}}${{matrix.builder_bin_ext}}
           if-no-files-found: error
 
+  test-example-configs:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test test test
+        run: make install-builder
+        working-directory: ./otelcolbuilder
+
+
   # pipeline to build FIPS compliance binary on Go+BoringCrypto for linux
   build-fips:
     name: Build
